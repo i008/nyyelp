@@ -77,6 +77,21 @@ Key takeways:
  - As we can see on fig1. The model makes mistakes almost only "by 1-star" this is a very good sign and leads to the conclusion that the "grduation" of the data was learned to some degree
  
 
+5) TSN-e and PCA on GRU features
+
+tsn-e and pca are dimmensionality reduction techniques, used on the features from last GRU layers they can give us an "2D"
+idea of the problem we are tackling.
+
+fig4. TSN-e  
+<img src="ims/TSN-e-gru.png" width="750">
+
+
+fig5. PCA  
+<img src="ims/pca-gru.png" width="750">
+
+
+
+
 4) Learning Performance
 - On epoch (~130,000 reviews) with a batch size of 128 reviews took around 15mins on  a GTX1070.
 
