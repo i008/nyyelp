@@ -1,20 +1,17 @@
 
-#  
+# Main objective:
+Predict review rating (how many stars the reviewer gave to given POI) given the textual-content of the review using pretrained **GLOVE** word embeddings and a 2 layers deep **GRU(LSTM)** recurrent neural network. Visualize clusters on a 2D space using PCA and t-SNE.
 
-### 1) simple exploration
 
-Simple exploratory notebook used to get a feel of the dataset
-can be found here:  
+#### simple yelp-dataset exploration
+yelp data: https://www.yelp.de/dataset_challenge  
+notebook used to load and explore basic properties of this dataset can be found here:  
 https://github.com/i008/nyyelp/blob/master/exploration.ipynb
 
-### 2) NLP project 
-
+#### NLP project 
 The notebook for this project can be found here:  
 https://github.com/i008/nyyelp/blob/master/nlp.ipynb
 
-
-#### main objective:
-Predict review rating (how many stars the reviewer gave to given POI) given the textual-content of the review using pretrained **GLOVE** word embeddings and a 2 layers deep **GRU(LSTM)** recurrent neural network. Visualize clusters on a 2D space using PCA and t-SNE.
 
 #### Steps(rough plan):
 
@@ -34,7 +31,7 @@ Predict review rating (how many stars the reviewer gave to given POI) given the 
 
 3) Deep learning
 - loss function, regression(rmse) and/or classification(logloss)
-- prepare architecture (2-3 LSTM layers -> Dense)
+- prepare architecture (2 LSTM/GRU layers -> Dense)
 - train, wish for the best
 
 4) Post learning
