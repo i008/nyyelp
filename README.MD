@@ -1,5 +1,5 @@
 
-# Main objective:
+# Project objective:
 Predict review rating (how many stars the reviewer gave to given POI) given the textual-content of the review using pretrained **GLOVE** word embeddings and a 2 layers deep **GRU(LSTM)** recurrent neural network. Visualize clusters on a 2D space using PCA and t-SNE.
 
 
@@ -9,7 +9,7 @@ notebook used to load and explore basic properties of this dataset can be found 
 https://github.com/i008/nyyelp/blob/master/exploration.ipynb
 
 #### NLP project 
-The notebook for this project can be found here:  
+The notebook for the NLP part of this project can be found here:  
 https://github.com/i008/nyyelp/blob/master/nlp.ipynb
 
 
@@ -43,20 +43,21 @@ https://github.com/i008/nyyelp/blob/master/nlp.ipynb
 
 # Summary
 
-1) Data used:  
+### Data used:  
 - For performance and memory reasons the final model was trained on a balanced and downsampled (by a factor of 10) subset of the dataset Leaving us aorund 150,000 reviews (in total)
 - Review data was tokenized (20,000 words)
 - Max sequence length was set to 1000.
 - Embedding dimensions were set to 100 (GLOVE-100d representation was used) wich means every words is a vector with shape (100,)
 
 
-2) Deep Learning Model  
+### Deep Learning Model  
 <img src="ims/model.png" width="800">
 
-- The Embedding layer used GLOVE (http://nlp.stanford.edu/projects/glove/) weights and training of this layer was disabled
+- The Embedding layer used GLOVE (http://nlp.stanford.edu/projects/glove/) weights. Training of this layer was disabled
 - The objective function was logloss wich means that it was a classification task , altough regression would also  be a valid option
+- After the 3rd-4th epoch we can observe that the model starts to overfit
 
-3) Results 
+### Results 
  
 fig1. confusion matrix :    
 <img src="ims/cat_confusion_matrix.png" width="500">
@@ -67,14 +68,14 @@ fig2. classification report:
 fig3. Learning process:  
 <img src="ims/cat_training.png" width="500">
 
-As we can see on the images above the model managed to learn (something) and achieved decent accuracy(~0.65).
+As we can see on the images above the model managed to learn (something) and achieved decent accuracy(~0.62).
    
 Key takeways: 
  - Extreme(1,5) reviews are easier to classify and understand, people write them in a specific way.
  - As we can see on fig1. The model makes mistakes almost only "by 1-star" this is a very good sign and leads to the conclusion that the "grduation" of the data was learned to some degree
  
 
-5) TSN-e and PCA on GRU features
+### TSN-e and PCA on GRU features
 
 tsn-e and pca are dimmensionality reduction techniques, used on the features from last GRU layers they can give us an "2D"
 idea of the problem we are tackling.
@@ -87,10 +88,8 @@ fig5. PCA
 <img src="ims/pca-gru.png" width="750">
 
 
-
-
 4) Learning Performance
-- On epoch (~130,000 reviews) with a batch size of 128 reviews took around 15mins on  a GTX1070.
+- One epoch (~130,000 reviews) with a batch size of 128 reviews took around 15mins on a GTX1070.
 
 
  
