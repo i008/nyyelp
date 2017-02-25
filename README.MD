@@ -51,7 +51,7 @@ https://github.com/i008/nyyelp/blob/master/nlp.ipynb
 
 
 2) Deep Learning Model  
-<img src="ims/model.png" width="500">
+<img src="ims/model.png" width="800">
 
 - The Embedding layer used GLOVE (http://nlp.stanford.edu/projects/glove/) weights and training of this layer was disabled
 - The objective function was logloss wich means that it was a classification task , altough regression would also  be a valid option
