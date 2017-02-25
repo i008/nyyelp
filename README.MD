@@ -47,21 +47,19 @@ Predict review rating (how many stars the reviewer gave to given POI) given the 
 1) Data used:  
 - For performance and memory reasons the final model was trained on a balanced and downsampled (by a factor of 10) subset  of the dataset Leaving us aorund 150,000 reviews (in total)
 
-2) Deep Learning Model
+2) Deep Learning Model  
 <img src="ims/model.png" width="500">
 
 - The Embedding layer used GLOVE (http://nlp.stanford.edu/projects/glove/) weights and training of this layer was disabled
 - The objective function was logloss wich means that it was a classification task , altough regression would also  be a valid option
 
-
 3) Results 
  
-confusion matrix:   
-
+confusion matrix:    
 <img src="ims/cat_confusion_matrix.png" width="500">
 
-classification report:  
-<img src="ims/classification_report" width="500">
+classification report:   
+<img src="ims/classification_report.png" width="500">
 
 
 
