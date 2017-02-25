@@ -43,8 +43,8 @@ https://github.com/i008/nyyelp/blob/master/nlp.ipynb
 
 # Summary
 
-### Data used:  
-- For performance and memory reasons the final model was trained on a balanced and downsampled (by a factor of 10) subset of the dataset Leaving us aorund 150,000 reviews (in total)
+### text Data:  
+- For performance and memory reasons the final model was trained on a balanced and downsampled (by a factor of 10) subset of the reviews leaving us around 150,000 reviews (in total)
 - Review data was tokenized (20,000 words)
 - Max sequence length was set to 1000.
 - Embedding dimensions were set to 100 (GLOVE-100d representation was used) wich means every words is a vector with shape (100,)
@@ -75,12 +75,12 @@ Key takeways:
  - As we can see on fig1. The model makes mistakes almost only "by 1-star" this is a very good sign and leads to the conclusion that the "grduation" of the data was learned to some degree
  
 
-### TSN-e and PCA on GRU features
+### t-SNE and PCA on GRU features
 
-tsn-e and pca are dimmensionality reduction techniques, used on the features from last GRU layers they can give us an "2D"
+t-SNE and PCA are dimmensionality reduction techniques, used on the features from last GRU layers they can give us an "2D"
 idea of the problem we are tackling.
 
-fig4. TSN-e  
+fig4. t-SNE  
 <img src="ims/TSN-e-gru.png" width="750">
 
 
@@ -88,11 +88,29 @@ fig5. PCA
 <img src="ims/pca-gru.png" width="750">
 
 
-4) Learning Performance
+### Learning Performance
 - One epoch (~130,000 reviews) with a batch size of 128 reviews took around 15mins on a GTX1070.
 
 
  
+
+
+### Docker app (try it yourself)
+
+```bash
+docker run i008/nyyelp:latest python predict.py --review "this place really sucks, food is terrible"
+```
+
+>number of stars: 1
+
+```bash
+docker run i008/nyyelp:latest python predict.py --review "i have mixed feeling about this place, on one hand its good on the other not really"
+```
+
+>number of stars: 3
+
+
+
 
 
 
