@@ -1,4 +1,6 @@
 
+#  
+
 ### 1) simple exploration
 
 Simple exploratory notebook used to get a feel of the dataset
@@ -42,10 +44,14 @@ Predict review rating (how many stars the reviewer gave to given POI) given the 
 5) Remarks
 - we have to limit the amount of data, bc of memory issues possible solution is to save the sequences into HDF and flowing from disk during training
 
-#### Summary
+# Summary
 
 1) Data used:  
-- For performance and memory reasons the final model was trained on a balanced and downsampled (by a factor of 10) subset  of the dataset Leaving us aorund 150,000 reviews (in total)
+- For performance and memory reasons the final model was trained on a balanced and downsampled (by a factor of 10) subset of the dataset Leaving us aorund 150,000 reviews (in total)
+- Review data was tokenized (20,000 words)
+- Max sequence length was set to 1000.
+- Embedding dimensions were set to 100 (GLOVE-100d representation was used) wich means every words is a vector with shape (100,)
+
 
 2) Deep Learning Model  
 <img src="ims/model.png" width="500">
@@ -55,11 +61,28 @@ Predict review rating (how many stars the reviewer gave to given POI) given the 
 
 3) Results 
  
-confusion matrix:    
+fig1. confusion matrix :    
 <img src="ims/cat_confusion_matrix.png" width="500">
 
-classification report:   
+fig2. classification report:   
 <img src="ims/classification_report.png" width="500">
+
+fig3. Learning process:  
+<img src="ims/cat_training.png" width="500">
+
+As we can see on the images above the model managed to learn (something) and achieved decent accuracy(~0.65).
+   
+Key takeways: 
+ - Extreme(1,5) reviews are easier to classify and understand, people write them in a specific way.
+ - As we can see on fig1. The model makes mistakes almost only "by 1-star" this is a very good sign and leads to the conclusion that the "grduation" of the data was learned to some degree
+ 
+
+4) Learning Performance
+- On epoch (~130,000 reviews) with a batch size of 128 reviews took around 15mins on  a GTX1070.
+
+
+ 
+
 
 
 
