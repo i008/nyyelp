@@ -113,8 +113,8 @@ docker run i008/nyyelp:latest python predict.py --review "i have mixed feeling a
 - Treat this problem as regression and see what happens
 - Cluster GRU features using DBSCAN or similar methods, might give interesting results.
 - Use more data to train the models.
-- Balance the dataset considering the length of the review.
-- 
+- Balance the dataset considering the length of the review. 
+- Interactive plot for t-SNE (click on a data point should show the review plotly?) 
 
 
 
