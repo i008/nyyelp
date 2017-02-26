@@ -108,6 +108,15 @@ docker run i008/nyyelp:latest python predict.py --review "i have mixed feeling a
 
 
 
+### TODO, Ideas
+
+- Treat this problem as regression and see what happens
+- Cluster GRU features using DBSCAN or similar methods, might give interesting results.
+- Use more data to train the models.
+- Balance the dataset considering the length of the review.
+- 
+
+
 
 
 
