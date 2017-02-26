@@ -77,7 +77,7 @@ Key takeways:
 
 ### t-SNE and PCA on GRU features
 
-t-SNE and PCA are dimmensionality reduction techniques, used on the features from last GRU layers they can give us an "2D"
+t-SNE and PCA are dimmensionality reduction techniques, used on the features from last GRU layer they can give us an "2D"
 idea of the problem we are tackling.
 
 fig4. t-SNE  
@@ -89,10 +89,7 @@ fig5. PCA
 
 
 ### Learning Performance
-- One epoch (~130,000 reviews) with a batch size of 128 reviews took around 15mins on a GTX1070.
-
-
- 
+- One epoch (~150,000 reviews) with a batch size of 128 reviews took around 15mins to train on a GTX1070.
 
 
 ### Docker app (try it yourself)
